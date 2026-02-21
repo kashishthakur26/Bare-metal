@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "ARM",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/91623/Desktop/embedded/metal/libopencm3/include",
+                "${workspaceFolder}/app/inc"
+            ],
+            "defines": [
+                "STM32F4"
+            ],
+            "compilerPath": "C:/msys64/mingw64/bin/arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

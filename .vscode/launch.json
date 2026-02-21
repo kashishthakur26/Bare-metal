@@ -1,0 +1,122 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "JLink: Debug Application",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/app",
+      "executable": "${workspaceFolder}/app/firmware.elf",
+      "servertype": "jlink",
+      "serverpath": "/usr/bin/JLinkGDBServer",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw",
+      "preLaunchTask": "build_debug"
+    },
+
+    {
+      "name": "JLink: Debug Bootloader",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/bootloader",
+      "executable": "${workspaceFolder}/bootloader/bootloader.elf",
+      "servertype": "jlink",
+      "serverpath": "/usr/bin/JLinkGDBServer",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw",
+      "preLaunchTask": "build_bootloader"
+    },
+
+    {
+      "name": "JLink: Attach to Application",
+      "type": "cortex-debug",
+      "request": "attach",
+      "cwd": "${workspaceFolder}/app",
+      "executable": "${workspaceFolder}/app/firmware.elf",
+      "servertype": "jlink",
+      "serverpath": "/usr/bin/JLinkGDBServer",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw"
+    },
+
+    {
+      "name": "JLink: Attach to Bootloader",
+      "type": "cortex-debug",
+      "request": "attach",
+      "cwd": "${workspaceFolder}/bootloader",
+      "executable": "${workspaceFolder}/bootloader/bootloader.elf",
+      "servertype": "jlink",
+      "serverpath": "/usr/bin/JLinkGDBServer",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw"
+    },
+
+    {
+      "name": "ST-Link: Debug Application",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/app",
+      "executable": "${workspaceFolder}/app/firmware.elf",
+      "servertype": "stutil",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw",
+      "preLaunchTask": "build_debug"
+    },
+
+    {
+      "name": "ST-Link: Debug Bootloader",
+      "type": "cortex-debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/bootloader",
+      "executable": "${workspaceFolder}/bootloader/bootloader.elf",
+      "servertype": "stutil",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw",
+      "preLaunchTask": "build_bootloader"
+    },
+
+    {
+      "name": "ST-Link: Attach to Application",
+      "type": "cortex-debug",
+      "request": "attach",
+      "cwd": "${workspaceFolder}/app",
+      "executable": "${workspaceFolder}/app/firmware.elf",
+      "servertype": "stutil",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw"
+    },
+
+    {
+      "name": "ST-Link: Attach to Bootloader",
+      "type": "cortex-debug",
+      "request": "attach",
+      "cwd": "${workspaceFolder}/bootloader",
+      "executable": "${workspaceFolder}/bootloader/bootloader.elf",
+      "servertype": "stutil",
+      "device": "STM32F401RE",
+      "interface": "swd",
+      "gdbPath": "arm-none-eabi-gdb",
+      "showDevDebugOutput": "raw"
+    }
+
+  ]
+}
