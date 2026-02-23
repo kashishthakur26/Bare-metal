@@ -1,11 +1,19 @@
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/gpio.h>
+#include <libopencm3/cm3/scb.h>
 
-#include <core/system.h>
-#include <core/timer.h>
+#include "core/system.h"
+#include "core/timer.h"
+
+#define BOOTLOADER_SIZE (0x8000U)
 
 #define LED_PORT (GPIOA)
 #define LED_PIN  (GPIO5)
+
+
+static void vector_setup(void){
+    SCB_VTOR = BOOTLOADER_SIZE;
+}
 
 static void gpio_setup(void){
     rcc_periph_clock_disable(RCC_GPIOA);
@@ -30,9 +38,9 @@ int main(void){
             if (duty_cycle > 100.0f){
                 duty_cycle = 0.0f;
             }
-            timer_pwm_set_duty_cycle(duty_cycle);   
+            timer_pwm_set_duty_cycle(duty_cycle);    
 
-        }
+        } 
     }
 
     return 0;
