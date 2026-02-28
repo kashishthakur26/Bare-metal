@@ -9,10 +9,6 @@ void sys_tick_handler(void){
     ticks++;
 }
 
-static uint64_t get_ticks(void){
-    return ticks;
-}
-
 static void rcc_setup(void){
     rcc_clock_setup_pll(&rcc_hsi_configs[RCC_CLOCK_3V3_84MHZ]);
 }
